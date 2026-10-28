@@ -1,5 +1,24 @@
 # [stud.io](https://studio-tau-silk.vercel.app)
 
+![Python](https://img.shields.io/badge/Python_3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![OpenCLIP](https://img.shields.io/badge/OpenCLIP_ViT--B%2F32-412991?style=for-the-badge)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
+![FAISS](https://img.shields.io/badge/FAISS-0467DF?style=for-the-badge&logo=meta&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![pandas](https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge)
+![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)
+
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Pydantic](https://img.shields.io/badge/Pydantic-E92063?style=for-the-badge&logo=pydantic&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
+![React](https://img.shields.io/badge/React_18-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=black)
+
 A LEGO set recommender that learns your taste one swipe at a time.
 
 You like or pass on sets in a swipe interface. Each rating retrains a small model on top of CLIP embeddings of the set photos and names, and **Your picks** shows the five unrated sets you're most likely to want. A **Model insights** page shows what the model has learned.
@@ -19,6 +38,7 @@ Rebrickable CSVs ──► catalog ──► set images ──► CLIP embedding
 ```
 
 1. **Catalog** (`ml/catalog.py`): sets from 2018–2026 (display builds) or 2020–2026 (play sets) with enough pieces, excluding gear, books, promos and seasonal items. Each set gets its top-level theme by walking the theme hierarchy.
+1. **Catalog** (`ml/catalog.py`): sets from 2018–2026 (display builds) or 2020–2026 (play sets) with enough pieces, excluding gear, books, promos and seasonal items. Each set gets its top-level theme by walking the theme hierarchy. Data is extracted 
 2. **Embeddings** (`ml/embed.py`): OpenAI CLIP ViT-B/32 embeds each set's photo and the text `"a LEGO {theme} set called {name}"`. The two are L2-normalized and averaged into one 512-dimensional vector per set. CLIP stays frozen; it's never fine-tuned.
 3. **Recommender** (`ml/recommender.py`):
   - **Baseline:** cosine similarity between each set and the average of the sets you liked, searched with FAISS. Embeddings are mean-centered first (see Results).
