@@ -1,4 +1,4 @@
 *.pyc
 /data/images
 venv/
-/
+data/studio.db
