@@ -1,0 +1,13 @@
+faiss-cpu
+fastapi
+uvicorn
+torch
+open_clip_torch
+pillow
+requests
+numpy
+pandas
+scikit-learn
+pyarrow
+matplotlib
+plotly
