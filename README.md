@@ -1,4 +1,4 @@
-# [stud.io](http://stud.io)
+# [stud.io](https://studio-tau-silk.vercel.app)
 
 A LEGO set recommender that learns your taste one swipe at a time.
 
