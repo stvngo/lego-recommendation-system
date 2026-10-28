@@ -37,7 +37,8 @@ Rebrickable CSVs ──► catalog ──► set images ──► CLIP embedding
   like/pass      via FastAPI       refit every rating
 ```
 
-1. **Catalog** (`ml/catalog.py`): sets from 2018–2026 (display builds) or 2020–2026 (play sets) with enough pieces, excluding gear, books, promos and seasonal items. Each set gets its top-level theme by walking the theme hierarchy.
+1. **Catalog** (`ml/catalog.py`): sets from 2018–2026 (display builds) or 2020–2026 (play sets) with enough pieces, excluding gear, books, promos and seasonal items. Each set gets its top-level theme by walking the theme hierarchy. Data is extracted from [Rebrickable API](https://rebrickable.com).
+1. **Catalog** (`ml/catalog.py`): sets from 2018–2026 (display builds) or 2020–2026 (play sets) with enough pieces, excluding gear, books, promos and seasonal items. Each set gets its top-level theme by walking the theme hierarchy. 
 1. **Catalog** (`ml/catalog.py`): sets from 2018–2026 (display builds) or 2020–2026 (play sets) with enough pieces, excluding gear, books, promos and seasonal items. Each set gets its top-level theme by walking the theme hierarchy. Data is extracted 
 2. **Embeddings** (`ml/embed.py`): OpenAI CLIP ViT-B/32 embeds each set's photo and the text `"a LEGO {theme} set called {name}"`. The two are L2-normalized and averaged into one 512-dimensional vector per set. CLIP stays frozen; it's never fine-tuned.
 3. **Recommender** (`ml/recommender.py`):
